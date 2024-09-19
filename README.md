@@ -1,59 +1,5 @@
 # Tuto installation tuyau CI/CD
 
-
-Skip to content
-Computer Science Class
-GitHub CI
-
-    Home
-    Python Programming
-    Algorithmic Thinking
-    Linux
-    Maths
-    Data Analysis tools in Python
-    Scraping
-    Relational DBMS
-    NoSQL DBMS
-    Machine/Deep Learning
-    NLP
-    Audio
-    Serverless
-    Computer Vision
-    Networking basics
-    Restful API
-    CI/CD
-    Docker for App Deployment
-    MLOps
-    Web - Mobile
-
-    CI/CD
-        Introduction
-        GitHub CI
-        Jenkins
-        Full Stack Web Pipeline
-
-Table of contents
-
-    What is git workflows
-    Set up python application
-    Create dev branch and merge code base
-    Merge Pull Request
-    Write your first yml workflow
-    Test workflow locally with act
-        Run local workflow with act
-            How it's work
-            Run workflows
-            Managing secrets
-    Deploy your workflow on github
-        Trigger you workflow
-    Automate the testing actions
-        Adding test workflow
-        Add docker build workflow
-            Add Dockerfile to our python app
-        Add docker push workflow
-    Deployment
-        Cloudron
-
 Continus Integration/Deployment with Github
 
 if you do not have all the git command in your head (which is normal if you are not working on github every day 😅) take a look at mini git no deep shit
