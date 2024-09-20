@@ -1,0 +1,32 @@
+name: CloudRon Auto Deployment
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Environment Setup
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '18'
+      - name: Deploy setup
+        run: npm install -g cloudron
+      - name: Update App
+        run: |
+          update="cloudron update --no-wait \
+            --server ${{ secrets.CLOUDRON_SERVER }} \
+            --token ${{ secrets.CLOUDRON_TOKEN }} \
+            --app ${{ secrets.CLOUDRON_APP }} \
+            --image ${{ secrets.DOCKER_IMAGE }}"
+          # Retry up to 5 times (with linear backoff)
+          NEXT_WAIT_TIME=0
+          until [ $NEXT_WAIT_TIME -eq 5 ] || $update; do
+              sleep $(( NEXT_WAIT_TIME++ ))
+          done
+          [ $NEXT_WAIT_TIME -lt 5 ]
