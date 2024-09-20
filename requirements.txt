@@ -1,8 +1,8 @@
 pydantic
 fastapi
-uvicorn=0.22.0
+uvicorn
 python-multipart
 websockets
 pytest
-pytest-cov=3.0.0
-httpx=0.24.0
+pytest-cov
+httpx
