@@ -1,5 +1,7 @@
+# app/test_main.py
+from app.main import app  # Importation absolue
+
 from fastapi.testclient import TestClient
-from .main import app  # Importez l'application à partir de app.main
 
 client = TestClient(app)
 
